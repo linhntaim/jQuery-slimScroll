@@ -2,8 +2,12 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * Version: 1.3.8
+ * Version: 1.3.9
  *
+ * Changelog:
+ *
+ * 1.3.9:
+ * - Fix issue 274 (https://github.com/rochal/jQuery-slimScroll/issues/274)
  */
 (function($) {
 
@@ -362,7 +366,7 @@
           }
 
           // calculate actual scroll amount
-          percentScroll = parseInt(bar.css('top')) / (me.outerHeight() - bar.outerHeight());
+          percentScroll = parseInt(bar.css('top')) / (parseInt(me.outerHeight()) - parseInt(bar.outerHeight()));
           delta = percentScroll * (me[0].scrollHeight - me.outerHeight());
 
           if (isJump)
